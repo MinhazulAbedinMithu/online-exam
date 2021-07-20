@@ -25,7 +25,7 @@ const Navbar = () => {
 			<div
 				className={
 					isOpen
-						? "grid grid-rows-3 text-center items-center text-4xl font-bold"
+						? "grid grid-rows-4 text-center items-center text-4xl font-bold"
 						: "hidden"
 				}
 			>

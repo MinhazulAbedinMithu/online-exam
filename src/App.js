@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import NoMatch from "./components/NoMatch";
+import Features from "./components/Features";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 				<Route exact path="/" component={Home} />
 				<Route path="/home" component={Home} />
 				<Route path="/about" component={About} />
+				<Route path="/features" component={Features} />
 				<Route path="/contact" component={Contact} />
 				<Route path="*" component={NoMatch} />
 			</Switch>

@@ -12,6 +12,12 @@ const NavItems = () => {
 			</Link>
 			<Link
 				className="p-4 active:border-b-4 border-purple-600 m-2"
+				to="/features"
+			>
+				Features
+			</Link>
+			<Link
+				className="p-4 active:border-b-4 border-purple-600 m-2"
 				to="/contact"
 			>
 				Contact
