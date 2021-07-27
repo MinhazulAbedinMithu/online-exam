@@ -1,57 +1,44 @@
-import React, { useState } from "react";
-import "../App.css";
-// import "./login.css";
-import axios from "axios";
-import { useHistory } from "react-router-dom";
+import React from "react";
+import firebase from "firebase/app";
+import "firebase/auth";
+import { firebaseConfig } from "../firebase.config";
+import { useState } from "react";
 
-const Login = ({ setLoginUser }) => {
-	const history = useHistory();
+firebase.initializeApp(firebaseConfig);
 
+const Login = () => {
 	const [user, setUser] = useState({
+		isSignIn: false,
+		name: "",
 		email: "",
-		password: "",
+		photo: "",
 	});
+	const provider = new firebase.auth.GoogleAuthProvider();
 
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setUser({
-			...user,
-			[name]: value,
-		});
+	const handleSignIn = () => {
+		firebase
+			.auth()
+			.signInWithPopup(provider)
+			.then((res) => {
+				const { displayName, email, photoURL } = res.user;
+				const signInUser = {
+					isSignIn: true,
+					name: displayName,
+					email: email,
+					photoURL: photoURL,
+				};
+				setUser(signInUser);
+			})
+			.catch((err) => {
+				const errMgs = err.message;
+				const errEmail = err.email;
+			});
 	};
-
-	const login = () => {
-		axios.post("http://localhost:9002/login", user).then((res) => {
-			alert(res.data.message);
-			setLoginUser(res.data.user);
-			history.push("/");
-		});
-	};
-
 	return (
-		<div className="login">
-			<h1>Login</h1>
-			<input
-				type="text"
-				name="email"
-				value={user.email}
-				onChange={handleChange}
-				placeholder="Enter your Email"
-			></input>
-			<input
-				type="password"
-				name="password"
-				value={user.password}
-				onChange={handleChange}
-				placeholder="Enter your Password"
-			></input>
-			<div className="button" onClick={login}>
-				Login
-			</div>
-			<div>or</div>
-			<div className="button" onClick={() => history.push("/register")}>
-				Register
-			</div>
+		<div>
+			<h2>Login</h2>
+			<button onClick={handleSignIn}>Sign in</button>
+			<p>{user.name}</p>
 		</div>
 	);
 };

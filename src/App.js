@@ -7,6 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import NoMatch from "./components/NoMatch";
 import Features from "./components/Features";
+import Login from "./components/Login";
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 				<Route path="/about" component={About} />
 				<Route path="/features" component={Features} />
 				<Route path="/contact" component={Contact} />
+				<Route path="/login" component={Login} />
 				<Route path="*" component={NoMatch} />
 			</Switch>
 		</Router>

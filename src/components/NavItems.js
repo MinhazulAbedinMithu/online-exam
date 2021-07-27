@@ -22,6 +22,9 @@ const NavItems = () => {
 			>
 				Contact
 			</Link>
+			<Link className="p-4 active:border-b-4 border-purple-600 m-2" to="/login">
+				Login
+			</Link>
 		</>
 	);
 };
