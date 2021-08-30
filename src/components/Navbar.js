@@ -7,18 +7,18 @@ const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="bg-yellow-400">
+		<div className="bg-blue-50">
 			<nav className="flex justify-between container mx-auto py-4 text-2xl font-bold px-2">
 				<Link to="/">Online Exam</Link>
 				<div
-					className="md:hidden block text-4xl"
+					className="lg:hidden block text-4xl"
 					onClick={() => {
 						setIsOpen(!isOpen);
 					}}
 				>
-					<CgMenuGridR />
+				<CgMenuGridR />
 				</div>
-				<div className="md:block hidden">
+				<div className="lg:block hidden">
 					<NavItems />
 				</div>
 			</nav>

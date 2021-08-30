@@ -2,9 +2,9 @@ import React from "react";
 
 const FeaturesItem = ({ icon, heading }) => {
 	return (
-		<div className="items-center border-2 p-4 rounded-md bg-pink-300 text-center">
-			<div className="text-8xl text-center">{icon}</div>
-			<h4>{heading}</h4>
+		<div className="p-4 rounded-md shadow-xl text-center h-44 w-44 break-words hover:bg-purple-500 hover:text-white">
+			<div className="text-8xl text-center inline-block">{icon}</div>
+			<h4 className="text-center font-bold">{heading}</h4>
 		</div>
 	);
 };

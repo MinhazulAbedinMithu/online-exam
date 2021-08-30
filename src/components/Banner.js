@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import bannerImg from "../images/banner.png";
+import CommonBtn from "./CommonBtn";
 
 const Banner = () => {
 	return (
-		<div className="bg-gradient-to-r from-green-400 via-red-300 to-pink-500">
-			<div className="container mx-auto py-8 flex">
-				<div className="banner-left w-3/5 py-24">
+		<div className="bg-gradient-to-r from-blue-200 via-indigo-300 to-purple-500 mb-12">
+			<div className="container mx-auto py-8 md:flex md:items-center">
+				<div className="banner-left mx-auto w-2/3 py-24 text-center md:text-left">
 					<h2 className="text-5xl font-bold text-purple-800">
 						Online Examination Application
 					</h2>
@@ -16,14 +16,9 @@ const Banner = () => {
 						praesentium debitis facilis enim asperiores et laboriosam earum id
 						laborum. sapiente vitae dolore doloremque sint eos?
 					</p>
-					<Link
-						to="/features"
-						className="p-2 border-2 border-yellow-600 rounded-md text-xl font-bold text-purple-900 bg-pink-200"
-					>
-						Features
-					</Link>
+					<CommonBtn destination="/features" title="Features" />
 				</div>
-				<div className="banner-right w-2/5">
+				<div className="banner-right px-2 md:w-3/5 w-full">
 					<img src={bannerImg} alt="banner" />
 				</div>
 			</div>
