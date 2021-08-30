@@ -133,7 +133,7 @@ const Login = () => {
 			) : (
 				<h2 className="text-4xl title-font text-center my-5 font-bold text-purple-900">Sign In</h2>
 			)}
-				<form action="">
+				<form action="POST" onSubmit={handleEmailSignIn}>
 					{newUser && (
 						<input type='text' placeholder="Full name" onBlur={handleBlur}
 					className="w-full mb-3 px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-300" />
