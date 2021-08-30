@@ -4,7 +4,7 @@ import "firebase/auth";
 import { firebaseConfig } from "../firebase.config";
 import { useState } from "react";
 import {Link} from "react-router-dom";
-import CommonBtn from "./CommonBtn";
+// import CommonBtn from "./CommonBtn";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -37,6 +37,7 @@ const Login = () => {
 			})
 			.catch((err) => {
 				const errMgs = err.message;
+				console.log(errMgs);
 			});
 	};
 
@@ -58,6 +59,7 @@ const Login = () => {
 				console.log(err);
 			});
 	};
+	
 
 	//handle Blur on input field ===>
 	const handleBlur = (event) => {
@@ -78,7 +80,7 @@ const Login = () => {
 			setUser(newUserInfo);
 		}
 	};
-
+	handleGoogleSignOut();
 	//handle Success ===>
 	const handleSuccess = (res) => {
 		const newUser = { ...user };
