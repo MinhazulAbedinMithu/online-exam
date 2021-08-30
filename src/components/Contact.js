@@ -34,19 +34,19 @@ const Contact = () => {
 						<CommonBtn destination="mailto:example@email.com" title="Submit" />
 						</div>
 						<div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-						<a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%3Ftab%3Drm%26ogbl&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="text-gray-500 hover:text-indigo-500">example@email.com</a>
+						<a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%3Ftab%3Drm%26ogbl&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" rel="noreferrer" class="text-gray-500 hover:text-indigo-500">example@email.com</a>
 							<p class="leading-normal my-5">49 Smith St. <br />Saint Cloud, MN 56301</p>
 							<span class="inline-flex">
-								<a href="https://www.facebook.com/" target="_blank" class="text-gray-500 text-xl hover:text-purple-700">
+								<a href="https://www.facebook.com/" target="_blank" rel="noreferrer" class="text-gray-500 text-xl hover:text-purple-700">
 									{<FaFacebook />}
 								</a>
-								<a href="https://twitter.com/?lang=en" target="_blank" class="ml-4 text-gray-500 text-xl hover:text-purple-700">
+								<a href="https://twitter.com/?lang=en" target="_blank" rel="noreferrer" class="ml-4 text-gray-500 text-xl hover:text-purple-700">
 									{<FaTwitter />}
 								</a>
-								<a href="https://www.instagram.com/?hl=en" target="_blank" class="ml-4 text-gray-500 text-xl hover:text-purple-700">
+								<a href="https://www.instagram.com/?hl=en" target="_blank" rel="noreferrer" class="ml-4 text-gray-500 text-xl hover:text-purple-700">
 									{<FaInstagram />}
 								</a>
-								<a href="https://www.instagram.com/?hl=en" target="_blank" class="ml-4 text-gray-500 text-xl hover:text-purple-700">
+								<a href="https://www.instagram.com/?hl=en" target="_blank" rel="noreferrer" class="ml-4 text-gray-500 text-xl hover:text-purple-700">
 									{<FaYoutube />}
 								</a>
 							</span>
