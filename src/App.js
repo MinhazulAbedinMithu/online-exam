@@ -8,22 +8,28 @@ import Contact from "./components/Contact";
 import NoMatch from "./components/NoMatch";
 import Features from "./components/Features";
 import Login from "./components/Login";
+import { useState, createContext } from "react";
 
+export const UserContext = createContext();
 
 function App() {
+	const [loggedInUser, setLoggedInUser] = useState({});
+
 	return (
-		<Router>
-			<Navbar />
-			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route path="/home" component={Home} />
-				<Route path="/about" component={About} />
-				<Route path="/features" component={Features} />
-				<Route path="/contact" component={Contact} />
-				<Route path="/login" component={Login} />
-				<Route path="*" component={NoMatch} />
-			</Switch>
-		</Router>
+		<UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+			<Router>
+				<Navbar />
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route path="/home" component={Home} />
+					<Route path="/about" component={About} />
+					<Route path="/features" component={Features} />
+					<Route path="/contact" component={Contact} />
+					<Route path="/login" component={Login} />
+					<Route path="*" component={NoMatch} />
+				</Switch>
+			</Router>
+		</UserContext.Provider>
 	);
 }
 
